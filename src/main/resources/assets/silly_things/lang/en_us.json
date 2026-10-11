@@ -1,0 +1,12 @@
+{
+  "item.silly_things.justitia": "Justitia",
+  "item.silly_things.justitia.desc_1": "Hits 5 times",
+  "item.silly_things.justitia.desc_2": "Has a chance to use a special attack",
+
+  "item.silly_things.mimicry": "Mimicry",
+  "item.silly_things.mimicry.desc_1": "Has life steal",
+  "item.silly_things.mimicry.desc_2": "Right-click to dash, knocking back enemies",
+  "item.silly_things.mimicry.desc_3": "Does more damage below half health",
+
+  "effect.silly_things.bleeding": "Bleeding"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "silly_things:item/handheld_large",
+  "textures": {
+    "layer0": "silly_things:item/justitia"
+  }
+}
