@@ -1,9 +1,9 @@
 package gay.amethyst.silly_things.items.weapons
 
 import gay.amethyst.silly_things.items.CooldownHandler
-import gay.amethyst.silly_things.util.text.ItemDescriptions
 import gay.amethyst.silly_things.util.Delay
 import gay.amethyst.silly_things.util.floatRange
+import gay.amethyst.silly_things.util.text.ItemDescriptions
 import gay.amethyst.silly_things.util.text.Rarity
 import net.minecraft.ChatFormatting
 import net.minecraft.core.BlockPos
@@ -14,15 +14,10 @@ import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.Item
-import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.SwordItem
-import net.minecraft.world.item.Tiers
-import net.minecraft.world.item.TooltipFlag
+import net.minecraft.world.item.*
 import net.minecraft.world.item.component.ItemAttributeModifiers
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
-import org.joml.Vector3f
 
 class Justitia(properties: Properties) : Item(
 	properties.durability(15000).stacksTo(1).fireResistant()
