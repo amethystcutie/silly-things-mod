@@ -15,7 +15,6 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.effect.MobEffectInstance
-import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EquipmentSlotGroup
 import net.minecraft.world.entity.LivingEntity
@@ -32,7 +31,6 @@ import net.minecraft.world.level.ClipContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.HitResult
-
 import kotlin.math.sqrt
 
 class Mimicry(properties: Properties) : Item(
@@ -85,7 +83,6 @@ class Mimicry(properties: Properties) : Item(
 		if (attacker.getAttackStrengthScale(0f) < 1f) return false
 
 		val level = attacker.level()
-		val source = target.damageSources().playerAttack(attacker)
 
 		level.playSound(null, target.blockPosition(), SoundEvents.SLIME_DEATH, SoundSource.PLAYERS, 1.8f, 0.1f)
 

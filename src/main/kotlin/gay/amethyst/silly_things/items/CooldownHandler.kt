@@ -1,6 +1,5 @@
 package gay.amethyst.silly_things.items
 
-import gay.amethyst.silly_things.items.weapons.Justitia
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.ItemLike
@@ -11,6 +10,8 @@ import net.neoforged.neoforge.event.entity.player.CriticalHitEvent
 
 @EventBusSubscriber
 object CooldownHandler {
+	val solemnLamentAltFire = mutableListOf<ItemStack>()
+
 	val wontAttackOnCooldown = mutableListOf<Item>()
 
 	fun dontAttackOnCooldown(item: ItemLike) {
