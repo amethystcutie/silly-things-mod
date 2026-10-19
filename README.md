@@ -7,9 +7,10 @@ Requires Minecraft 1.21.1, [NeoForge](https://neoforged.net/), and [Kotlin For F
 Current items:
 - Justitia (Lobotomy Corporation)
 - Mimicry (Lobotomy Corporation)
+- Solemn Lament (Lobotomy Corporation)
 
 WIP:
-- Solemn Lament
+- Some way to craft them
 
 ---
 Made for Hack Club Terra

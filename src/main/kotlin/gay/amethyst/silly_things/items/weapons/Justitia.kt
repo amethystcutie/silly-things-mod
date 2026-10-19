@@ -28,7 +28,7 @@ class Justitia(properties: Properties) : Item(
 	}
 
 	override fun getName(stack: ItemStack): Component =
-		Component.translatable("item.silly_things.justitia").withColor(Rarity.LOB_PALE.hexColour).withStyle(ChatFormatting.BOLD)
+		Component.translatable("item.silly_things.justitia").withColor(Rarity.JUSTITIA.hexColour).withStyle(ChatFormatting.BOLD)
 
 	override fun getDefaultAttributeModifiers(stack: ItemStack): ItemAttributeModifiers = SwordItem.createAttributes(
 		Tiers.WOOD, 0, -3f
@@ -42,8 +42,8 @@ class Justitia(properties: Properties) : Item(
 	) {
 		tooltipComponents.add(Component.literal("ALEPH").withColor(Rarity.LOB_ALEPH.hexColour))
 
-		tooltipComponents.add(Component.translatable("item.silly_things.justitia.desc_1").withColor(Rarity.LOB_PALE.hexColour))
-		tooltipComponents.add(Component.translatable("item.silly_things.justitia.desc_2").withColor(Rarity.LOB_PALE.hexColour))
+		tooltipComponents.add(Component.translatable("item.silly_things.justitia.desc_1").withColor(Rarity.JUSTITIA.lightHex))
+		tooltipComponents.add(Component.translatable("item.silly_things.justitia.desc_2").withColor(Rarity.JUSTITIA.lightHex))
 		tooltipComponents.add(ItemDescriptions.from(ItemDescriptions.Reference.LOBCORP))
 
 		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
@@ -78,7 +78,7 @@ class Justitia(properties: Properties) : Item(
 					level.playSound(null, target.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS)
 
 					(level as? ServerLevel)?.sendParticles(
-						DustParticleOptions(Rarity.LOB_PALE.colour.toVec3f(), 2f),
+						DustParticleOptions(Rarity.JUSTITIA.colour.toVec3f(), 2f),
 						target.x,
 						target.y,
 						target.z,

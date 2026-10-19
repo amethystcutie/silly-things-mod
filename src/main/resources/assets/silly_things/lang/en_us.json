@@ -8,5 +8,14 @@
   "item.silly_things.mimicry.desc_2": "Right-click to dash, knocking back enemies",
   "item.silly_things.mimicry.desc_3": "Does more damage below half health",
 
-  "effect.silly_things.bleeding": "Bleeding"
+  "item.silly_things.solemn_lament": "Solemn Lament",
+  "item.silly_things.solemn_lament.desc_1": "Requires two hands",
+  "item.silly_things.solemn_lament.desc_2": "Alternates between dealing white and black damage",
+
+  "effect.silly_things.bleeding": "Bleeding",
+
+  "hint.silly_things.solemn_lament.both_hands": "Requires two hands!",
+
+  "sounds.silly_things.solemn_lament_white": "Ding!",
+  "sounds.silly_things.solemn_lament_black": "Dong!"
 }

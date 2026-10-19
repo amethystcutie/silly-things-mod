@@ -1,0 +1,20 @@
+{
+  "solemn_lament_white": {
+    "subtitle": "sounds.silly_things.solemn_lament_white",
+    "sounds": [
+      "silly_things:weapons/solemn_lament_white"
+    ]
+  },
+  "solemn_lament_black": {
+    "subtitle": "sounds.silly_things.solemn_lament_black",
+    "sounds": [
+      "silly_things:weapons/solemn_lament_black"
+    ]
+  },
+  "mimicry_hit": {
+    "subtitle": "sounds.silly_things.mimicry_hit",
+    "sounds": [
+      "silly_things:weapons/mimicry_hit"
+    ]
+  }
+}

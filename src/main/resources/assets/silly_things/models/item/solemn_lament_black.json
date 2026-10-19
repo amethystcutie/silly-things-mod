@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "silly_things:item/solemn_lament_black"
+  }
+}

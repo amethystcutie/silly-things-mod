@@ -1,0 +1,59 @@
+{
+  "count": 3,
+  "emitter_settings": {
+    "shape": {
+      "shape": "veil:disc",
+      "dimensions": [
+        1.8,
+        0.68,
+        1.8
+      ],
+      "rotation": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "from_surface": true
+    },
+    "particle_settings": {
+      "initial_rotation_variation": [
+        0.825,
+        0.65,
+        0.925
+      ],
+      "random_speed": true,
+      "random_size": true,
+      "random_lifetime": true,
+      "random_initial_direction": true,
+      "initial_direction_variation": [
+        0.9,
+        0.28,
+        0.02
+      ],
+      "random_initial_rotation": true,
+      "particle_size_variation": 0.10999999,
+      "particle_lifetime": 4,
+      "particle_lifetime_variation": 31.0,
+      "initial_direction": [
+        0.09,
+        0.11,
+        0.68
+      ],
+      "particle_speed": 0.01,
+      "particle_speed_variation": 0.02,
+      "base_particle_size": 0.3
+    }
+  },
+  "particle_data": {
+    "sprite_data": {
+      "frame_width": 2,
+      "sprite": "silly_things:textures/particle/butterfly_black.png",
+      "frame_count": 2,
+      "frame_time": 1.5
+    },
+    "render_style": "veil:billboard"
+  },
+  "max_lifetime": 42,
+  "loop": true,
+  "rate": 1
+}

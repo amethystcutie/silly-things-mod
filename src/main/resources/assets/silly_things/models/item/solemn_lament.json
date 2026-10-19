@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "silly_things:item/solemn_lament"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "silly_things:gun": 0.5
+      },
+      "model": "silly_things:item/solemn_lament_white"
+    },
+    {
+      "predicate": {
+        "silly_things:gun": 1
+      },
+      "model": "silly_things:item/solemn_lament_black"
+    }
+  ]
+}

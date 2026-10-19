@@ -1,6 +1,8 @@
 package gay.amethyst.silly_things.items.weapons
 
 import gay.amethyst.silly_things.effects.ModEffects
+import gay.amethyst.silly_things.sounds.ModSounds
+import gay.amethyst.silly_things.sounds.weapons.ModWeaponSounds
 import gay.amethyst.silly_things.util.text.ItemDescriptions
 import gay.amethyst.silly_things.util.text.Rarity
 import net.minecraft.ChatFormatting
@@ -16,6 +18,7 @@ import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.EquipmentSlotGroup
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.MobCategory
@@ -37,7 +40,7 @@ class Mimicry(properties: Properties) : Item(
 	properties.durability(22222).stacksTo(1).fireResistant()
 ) {
 	override fun getName(stack: ItemStack): Component =
-		Component.translatable("item.silly_things.mimicry").withColor(Rarity.LOB_RED.hexColour).withStyle(ChatFormatting.BOLD)
+		Component.translatable("item.silly_things.mimicry").withColor(Rarity.MIMICRY.hexColour).withStyle(ChatFormatting.BOLD)
 
 	override fun getDefaultAttributeModifiers(stack: ItemStack): ItemAttributeModifiers =
 		ItemAttributeModifiers.builder().add(
@@ -70,9 +73,9 @@ class Mimicry(properties: Properties) : Item(
 	) {
 		tooltipComponents.add(Component.literal("ALEPH").withColor(Rarity.LOB_ALEPH.hexColour))
 
-		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_1").withColor(Rarity.LOB_RED.hexColour))
-		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_2").withColor(Rarity.LOB_RED.hexColour))
-		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_3").withColor(Rarity.LOB_RED.hexColour))
+		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_1").withColor(Rarity.MIMICRY.lightHex))
+		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_2").withColor(Rarity.MIMICRY.lightHex))
+		tooltipComponents.add(Component.translatable("item.silly_things.mimicry.desc_3").withColor(Rarity.MIMICRY.lightHex))
 		tooltipComponents.add(ItemDescriptions.from(ItemDescriptions.Reference.LOBCORP))
 
 		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
@@ -84,7 +87,7 @@ class Mimicry(properties: Properties) : Item(
 
 		val level = attacker.level()
 
-		level.playSound(null, target.blockPosition(), SoundEvents.SLIME_DEATH, SoundSource.PLAYERS, 1.8f, 0.1f)
+		level.playSound(null, target.blockPosition(), ModWeaponSounds.MIMICRY_HIT.get(), SoundSource.PLAYERS, 1.8f, 0.1f)
 
 		target.addEffect(MobEffectInstance(ModEffects.BLEEDING, 3 * 20, 2))
 		attacker.heal(0.2f * (target.maxHealth - target.health))
@@ -139,7 +142,7 @@ class Mimicry(properties: Properties) : Item(
 				if (len > 0) {
 					e.push(dx / len * strength, strength, dz / len * strength)
 
-					if ((e.type.category == MobCategory.MONSTER)) {
+					if (e.type.category == MobCategory.MONSTER || e.type == EntityType.WANDERING_TRADER) {
 						e.hurt(e.damageSources().playerAttack(entity), 3f)
 						(e as LivingEntity).addEffect(MobEffectInstance(ModEffects.BLEEDING, 2 * 20, 0))
 					}

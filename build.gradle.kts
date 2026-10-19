@@ -14,7 +14,7 @@ plugins {
 	id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 }
 
-version = prop("mod_version")
+version = "${prop("mod_version")}+${prop("minecraft_version")}"
 group = prop("mod_group_id")
 
 java {
@@ -41,13 +41,26 @@ repositories {
 			includeGroup("maven.modrinth")
 		}
 	}
-	maven("https://maven.azuredoom.com/mods") {
-		name = "AzureDoom Mods"
+	maven("https://maven.ryanhcode.dev/releases") { // For ImGuiMC
+		name = "RyanHCode Maven"
+	}
+	maven("https://maven.blamejared.com") { // For Veil
+		name = "BlameJared Maven (CrT / Bookshelf)"
+	}
+
+	maven {
+		name = "CaffeineMC"
+		url = uri("https://maven.caffeinemc.net/releases") // or /snapshots
+	}
+
+	maven {
+		name = "RedlanceMinecraft"
+		url = uri("https://repo.redlance.org/public")
 	}
 }
 
 base {
-	archivesName.set(modId)
+	archivesName.set("${prop("mod_id")}-${prop("mod_loader")}")
 }
 
 neoForge {
@@ -122,11 +135,17 @@ sourceSets {
 dependencies {
 	implementation("thedarkcolour:kotlinforforge-neoforge:${prop("kff_version")}")
 
-	runtimeOnly("maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge")
-	runtimeOnly("maven.modrinth:iris:1.8.12+1.21.1-neoforge")
-	runtimeOnly("maven.modrinth:jade:15.10.3+neoforge")
-	runtimeOnly("maven.modrinth:emi:1.1.22+1.21.1+neoforge")
-	runtimeOnly("maven.modrinth:ferrite-core:7.0.2-neoforge")
+	jarJar(
+		implementation("foundry.veil:veil-neoforge-${prop("minecraft_version")}:${prop("veil_version")}") {}) {
+		version {
+			strictly("[${prop("veil_version")},)")
+			prefer(prop("veil_version"))
+		}
+	}
+
+
+
+	runtimeOnly("foundry.imguimc:imguimc-neoforge-${prop("minecraft_version")}:${prop("imguimc_version")}")
 }
 
 val generateModMetadata by tasks.registering(ProcessResources::class) {
